@@ -1,0 +1,15 @@
+
+.prueba{
+    
+    background-color: #f6f8fa;;
+    border: 1px solid;
+    border-radius: 10px;
+    border-color: rgba(13, 116, 116, 0.267);
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    
+}
+

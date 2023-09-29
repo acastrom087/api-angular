@@ -1,0 +1,66 @@
+<div class="container">
+    <table mat-table [dataSource]="users" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let user"> {{user.FirstName}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="apellido">
+            <th mat-header-cell *matHeaderCellDef> Apellido </th>
+            <td mat-cell *matCellDef="let user"> {{user.LastName}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let user"> {{user.Email}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef> Acciones </th>
+            <td class="botones" mat-cell *matCellDef="let user"> 
+                <a class="btn1"  [routerLink]="['/delete',user.ID]">
+                    <button mat-button >Detalles</button>
+                </a>
+                <a [routerLink]="['/tasks',user.ID]">
+                    <button mat-button >Tareas</button>
+                </a>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>
+
+<!-- <table class="table table-hover">
+    <tr>
+        <th scope="row">Nombre</th>
+        <th scope="row">apellido</th>
+        <th scope="row">Email</th>
+        <th scope="row">Acciones</th>
+    </tr>
+    <tr *ngFor=" let user of users">
+        <td>{{user.FirstName}}</td>
+        <td>{{user.LastName}}</td>
+        <td>{{user.Email}}</td>
+        
+        <td>
+            <a [routerLink]="['delete',user.ID]">
+            <button class="btn-primary btn" >Detalles</button>
+            </a>
+            <a [routerLink]="['tasks',user.ID]">
+                <button class="btn-secondary btn" >Tareas</button>
+                </a>
+
+        </td>
+    </tr>
+</table> -->

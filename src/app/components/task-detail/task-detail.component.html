@@ -1,0 +1,31 @@
+<div class="container " *ngIf="loading">
+    
+    <h1>Taks</h1>
+    <form class="form-group">
+        <div class="for-group col-md-7 mt-4">
+            <label for=""> Titulo </label>
+            <input type="text" class="form-control" [(ngModel)]="task.Title" name="Title">
+        </div>
+        <div class="for-group col-md-7 mt-4">
+            <label for=""> Descripcion </label>
+            <textarea class="form-control" rows="3" [(ngModel)]="task.Description" name="Descripcion"></textarea>
+        </div>
+        <div class="for-group col-md-3 mt-4">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox"  id="flexCheckDefault" [(ngModel)]="task.Done" name="Done">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Done
+                </label>
+            </div>
+        </div>
+        <div class="mt-5 for-group botones">
+            <button class="btn btn-primary" (click)="editTask()" type="submit" >Editar</button>
+            <button class="btn btn-danger" (click)="deleteTask()" type="submit" >Eliminar</button>
+        </div>
+
+    </form>
+
+</div>
+
+
+

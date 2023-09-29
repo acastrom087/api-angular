@@ -1,0 +1,22 @@
+th{
+    background-color: black;
+    color: aliceblue;
+    
+}
+table{
+    margin-top: 5rem;
+    width: 100%;
+    table-layout: fixed;
+}
+
+a{
+    text-decoration: none;
+    background-color: blue;
+    border-radius: 10px;
+    padding: 8px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+ 

@@ -1,0 +1,56 @@
+<div class="container">
+    <table mat-table [dataSource]="tasks" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="titulo">
+          <th mat-header-cell *matHeaderCellDef> Titulo </th>
+          <td mat-cell *matCellDef="let task"> {{task.Title}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="estado">
+          <th mat-header-cell *matHeaderCellDef> Estado </th>
+          <td mat-cell *matCellDef="let task"> {{task.Done? "Completed": "In process"}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let task"> <a [routerLink]="['/task',task.ID]"> <button mat-button >Ver Tarea</button> </a></td>
+        </ng-container>
+      
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+      
+
+</div>
+
+    <!-- <table class="table table-hover">
+        <tr>
+            <th scope="row">Titulo</th>
+            <th scope="row">Done</th>
+            <th scope="row">Acciones</th>
+        </tr>
+        <tr *ngFor="let task of tasks">
+            <td>{{task.Title}}</td>
+            <td>{{task.Done? "Completed": "In process"}}</td>
+            <td>
+                 <a href="/task/{{task.ID}}">
+                    <button class="btn-primary btn">Detalles</button>
+                </a>
+                <a routerLink="/task/{{task.ID}}">
+                    <button class="btn-primary btn">Detalles</button>
+                </a> 
+                <a [routerLink]="['/task',task.ID]">
+                    <button class="btn-primary btn">Detalles</button>
+                </a>
+
+            </td>
+        </tr>
+    </table> -->

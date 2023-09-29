@@ -1,0 +1,36 @@
+
+<div class="container margin">
+<form class="form-group row">
+    <div class="for-group col-md-3">
+    <label for=""> Nombre </label>
+    <input type="text" name="nombre" id="nombre" [(ngModel)]="nombre" class="form-control">
+</div>
+<div class="for-group col-md-3">
+    <label for=""> Apellido </label>
+    <input type="text" name="apellido" id="apellido" [(ngModel)]="apellido" class="form-control">
+</div>
+<div class="for-group col-md-3">
+    <label for=""> Email </label>
+    <input type="text" name="email" id="email" [(ngModel)]="email" class="form-control">
+</div>
+<div class="for-group col-md-3">
+    <label for=""> Password </label>
+    <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control">
+</div>
+
+<div class="mt-4">
+    <button class="btn btn-primary" type="submit" (click)="createUser()">Guardar</button>
+</div>
+
+</form>
+
+<p *ngIf="vacio; else alerta"></p>
+</div>
+
+<ng-template #alerta>
+    <app-mensaje-component></app-mensaje-component>
+</ng-template>
+
+
+<app-users-component  [users]="users" ></app-users-component>
+<router-outlet></router-outlet>

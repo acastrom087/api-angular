@@ -1,0 +1,21 @@
+
+table{
+    margin-top: 5rem;
+    
+}
+
+
+.btn1{
+    margin-right: 1rem;
+}
+
+
+a{
+    text-decoration: none;
+    background-color: blue;
+    border-radius: 10px;
+    padding: 8px;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+}
